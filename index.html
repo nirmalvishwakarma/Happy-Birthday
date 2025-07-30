@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <title>Countdown Timer</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="https://fonts.googleapis.com/css?family=Dancing+Script&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="Css/index.css">
+</head>
+
+<body>
+
+    <div id="patience-text">Be Patient My Friend😉</div>
+    <div id="timer">
+        <div id="countdown">Loading timer...</div>
+    </div>
+    <a id="surprise-btn" href="song.html">🎁 Click Me</a>
+
+    <script>
+        //const birthday = new Date("2025-12-28T00:00:00");
+        const birthday = new Date("2025-07-27T12:40:00");
+
+        function plural(n, word) {
+            return n === 1 ? word : word + 's';
+        }
+
+        function updateTimer() {
+            const now = new Date();
+            const diff = birthday - now;
+            const countdownDiv = document.getElementById('countdown');
+            const btn = document.getElementById('surprise-btn');
+
+            if (diff <= 0) {
+                countdownDiv.innerHTML = "🎉 Surprise is Ready!";
+                btn.style.display = "inline-block"; // Show the surprise button
+            } else {
+                const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+                const hours = Math.floor((diff / (1000 * 60 * 60)) % 24);
+                const minutes = Math.floor((diff / (1000 * 60)) % 60);
+                const seconds = Math.floor((diff / 1000) % 60);
+                countdownDiv.innerHTML =
+                    `${days} ${plural(days, 'day')}, ${hours} ${plural(hours, 'hr')}, ${minutes} ${plural(minutes, 'min')}, ${seconds} ${plural(seconds, 'sec')}`;
+                btn.style.display = "none"; // Keep button hidden
+            }
+        }
+
+        setInterval(updateTimer, 1000);
+        updateTimer();
+    </script>
+
+</body>
+
+</html>

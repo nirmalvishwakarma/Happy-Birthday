@@ -1,116 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8" />
   <title>Open Your Letter</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link href="https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap" rel="stylesheet">
-  <style>
-    *{
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-        }
-    body {
-      margin: 0;
-      padding: 0;
-      background: linear-gradient(135deg, #ffe3ec, #fff8f0);
-      /* font-family: 'Indie Flower', cursive; */
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      min-height: 100vh;
-      text-align: center;
-      padding: 20px;
-      box-sizing: border-box;
-    }
-
-    .envelope {
-      width: 180px;
-      height: 120px;
-      background: #ff7eb3;
-      position: relative;
-      border-radius: 10px;
-      box-shadow: 0 6px 12px rgba(0,0,0,0.2);
-      cursor: pointer;
-      transition: transform 0.4s ease;
-      animation: bounce 2s infinite;
-    }
-
-    .envelope::before,
-    .envelope::after {
-      content: '';
-      position: absolute;
-      border-style: solid;
-      border-width: 60px 90px 0 90px;
-      border-color: #ff9ec7 transparent transparent transparent;
-      top: 0;
-      left: 0;
-    }
-
-    @keyframes bounce {
-      0%, 100% {
-        transform: translateY(0);
-      }
-      50% {
-        transform: translateY(-10px);
-      }
-    }
-
-    .letter {
-      display: none;
-      max-width: 700px;
-      width: 100%;
-      background: #fff;
-      padding: 2em;
-      border-radius: 12px;
-      box-shadow: 0 6px 20px rgba(0,0,0,0.2);
-      color: #7c1746;
-      font-size: 1.2rem;
-      line-height: 1.6;
-      text-align: left;
-      animation: fadeIn 1s ease forwards;
-      white-space: pre-wrap;
-      min-height: 200px;
-      box-sizing: border-box;
-    }
-
-    .letter h2 {
-      margin-top: 0;
-      font-size: 1.8rem;
-    }
-
-    .envelope.opened {
-      transform: scale(0);
-      animation: none;
-    }
-
-    @keyframes fadeIn {
-      from { opacity: 0; transform: scale(0.95); }
-      to { opacity: 1; transform: scale(1); }
-    }
-
-    @media (max-width: 600px) {
-      .letter {
-        font-size: 1rem;
-        padding: 1.5em;
-      }
-
-      .letter h2 {
-        font-size: 1.4rem;
-      }
-
-      .envelope {
-        width: 140px;
-        height: 100px;
-      }
-
-      .envelope::before,
-      .envelope::after {
-        border-width: 50px 70px 0 70px;
-      }
-    }
-  </style>
+  <link rel="stylesheet" href="Css/letter.css">
 </head>
+
 <body>
 
   <div class="envelope" onclick="openLetter()" aria-label="Click to open envelope" title="Tap to open!"></div>
@@ -122,12 +20,20 @@
   </div>
 
   <script>
-    const titleText = "Dear Bestie 💖";
-    const messageText = `Happy Birthday! 🎂🎉
-I hope today fills your heart with joy, laughter, and lots of cake. 🎈
-You're truly one of a kind and I’m lucky to have you in my life.
-Here's to beautiful memories and more moments together! 💕`;
-    const fromText = "With love,\nYour Best Friend 🌸";
+    const titleText = "Oye Nilisha💖";
+    const messageText = `🎉 Happy Birthday to someone who truly exist also! 🎂💖
+
+I know you’ve been super pro max busy person, and that’s why I made this just for you — a little reminder that you loved and care every single day. 💌✨
+
+You’re not only incredible but most alag ladki that i met in my life, but your love for beautiful things like lilies 🌸 and lotuses 🌺 inspires me.I hope ki you love this wonderable gift that brings a smile on your face and a little peace to your birthday days. 🖤🤍💙❤️
+
+Take a moment for yourself today, and enjoy all the moment coming in your way, and remember how special you are to me and everyone lucky enough to know you. 💫
+
+With all my love,
+Your Panda 🐼🌸
+
+
+            Enojoy Your Day`;
 
     function typeText(targetId, text, delay = 30, callback) {
       const target = document.getElementById(targetId);
@@ -159,4 +65,5 @@ Here's to beautiful memories and more moments together! 💕`;
   </script>
 
 </body>
+
 </html>
