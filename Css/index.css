@@ -1,24 +1,24 @@
-*{
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+* {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
         }
+
         body {
             margin: 0;
             min-height: 100vh;
             background: linear-gradient(290deg, #ffd1e3 0%, #fff8f0 100%);
-            /* font-family: 'Dancing Script', cursive, Arial, sans-serif; */
             display: flex;
             flex-direction: column;
             align-items: center;
             justify-content: center;
             padding: 20px;
             box-sizing: border-box;
+            overflow: hidden;
         }
 
         #patience-text {
             font-size: 1.5rem;
-            font-weight: 600;
-            color: #db2777cc;
-            font-family: 'Arial', sans-serif;
+            font-weight: bold;
+            color: #db2777;
             margin-bottom: 1em;
             user-select: none;
             text-align: center;
@@ -28,13 +28,11 @@
 
         #timer {
             font-size: 6vw;
-            /* scalable font size */
-            max-font-size: 2rem;
             font-weight: bold;
             color: #db2777;
             background: #fff8f0;
             border-radius: 16px;
-            padding: 1.2em 2em;
+            padding: 1em 0.9em;
             box-shadow: 0 4px 14px #f472b6bb;
             text-align: center;
             letter-spacing: 1px;
@@ -47,9 +45,7 @@
 
         #surprise-btn {
             display: none;
-            font-size: 5vw;
-            /* scalable font size */
-            max-font-size: 1.5rem;
+            font-size: 6vw;
             color: #db2777;
             border: 2px solid #db2777;
             background: transparent;
@@ -59,7 +55,7 @@
             transition: all 0.3s ease;
             text-decoration: none;
             width: 100%;
-            max-width: 300px;
+            max-width: 180px;
             text-align: center;
             box-sizing: border-box;
         }
@@ -69,14 +65,85 @@
             background-color: #db2777;
         }
 
+        .balloon {
+            position: absolute;
+            width: 60px;
+            height: 80px;
+            background: pink;
+            border-radius: 50% 50% 45% 45%;
+            box-shadow: inset -5px -10px 20px rgba(0, 0, 0, 0.2);
+            animation: float 5s ease-in-out infinite;
+            display: none;
+            top: 100%;
+        }
+
+
+        .balloon::after {
+            content: '';
+            position: absolute;
+            bottom: -20px;
+            left: 50%;
+            width: 2px;
+            height: 20px;
+            background: #888;
+        }
+
+        @keyframes float {
+            0% {
+                transform: translateY(0%);
+                opacity: 0;
+                top: 100%;
+            }
+
+            20% {
+                opacity: 1;
+            }
+
+            100% {
+                transform: translateY(-150%);
+                opacity: 0;
+                top: 0%;
+            }
+        }
+
+
+        .balloon:nth-child(1) {
+            left: 10%;
+            background: #ffb3ba;
+            animation-delay: 0s;
+        }
+
+        .balloon:nth-child(2) {
+            left: 30%;
+            background: #bae1ff;
+            animation-delay: 2s;
+        }
+
+        .balloon:nth-child(3) {
+            left: 50%;
+            background: #baffc9;
+            animation-delay: 4s;
+        }
+
+        .balloon:nth-child(4) {
+            left: 70%;
+            background: #ffffba;
+            animation-delay: 1s;
+        }
+
+        .balloon:nth-child(5) {
+            left: 90%;
+            background: #ffdfba;
+            animation-delay: 3s;
+        }
+
         @media (min-width: 500px) {
             #patience-text {
-                font-size: 1.2rem;
+                font-size: 3rem;
             }
 
             #timer {
                 font-size: 2rem;
-                /* fixed size for bigger screens */
             }
 
             #surprise-btn {

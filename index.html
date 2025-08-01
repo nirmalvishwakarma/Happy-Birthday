@@ -8,9 +8,16 @@
     <link href="https://fonts.googleapis.com/css?family=Dancing+Script&display=swap" rel="stylesheet" />
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="Css/index.css">
+    <meta name="author" content="Nirmal Vishwakarma">
 </head>
 
 <body>
+    <!-- Balloons (initially hidden) -->
+    <div class="balloon" id="b1"></div>
+    <div class="balloon" id="b2"></div>
+    <div class="balloon" id="b3"></div>
+    <div class="balloon" id="b4"></div>
+    <div class="balloon" id="b5"></div>
 
     <div id="patience-text">Be Patient My Friend😉</div>
     <div id="timer">
@@ -19,11 +26,17 @@
     <a id="surprise-btn" href="song.html">🎁 Click Me</a>
 
     <script>
-        //const birthday = new Date("2025-12-28T00:00:00");
-        const birthday = new Date("2025-07-27T12:40:00");
+        // Set your birthday target date/time
+        const birthday = new Date("2025-08-05T00:00:00");
 
         function plural(n, word) {
             return n === 1 ? word : word + 's';
+        }
+
+        function showBalloons() {
+            for (let i = 1; i <= 5; i++) {
+                document.getElementById(`b${i}`).style.display = "block";
+            }
         }
 
         function updateTimer() {
@@ -31,10 +44,13 @@
             const diff = birthday - now;
             const countdownDiv = document.getElementById('countdown');
             const btn = document.getElementById('surprise-btn');
+            const patient = document.getElementById('patience-text')
 
             if (diff <= 0) {
-                countdownDiv.innerHTML = "🎉 Surprise is Ready!";
-                btn.style.display = "inline-block"; // Show the surprise button
+                countdownDiv.innerHTML = "😉 Surprise is Ready! 🎉";
+                btn.style.display = "inline-block";
+                patient.style.display = "none";
+                showBalloons();
             } else {
                 const days = Math.floor(diff / (1000 * 60 * 60 * 24));
                 const hours = Math.floor((diff / (1000 * 60 * 60)) % 24);
@@ -42,14 +58,13 @@
                 const seconds = Math.floor((diff / 1000) % 60);
                 countdownDiv.innerHTML =
                     `${days} ${plural(days, 'day')}, ${hours} ${plural(hours, 'hr')}, ${minutes} ${plural(minutes, 'min')}, ${seconds} ${plural(seconds, 'sec')}`;
-                btn.style.display = "none"; // Keep button hidden
+                btn.style.display = "none";
             }
         }
 
         setInterval(updateTimer, 1000);
         updateTimer();
     </script>
-
 </body>
 
 </html>

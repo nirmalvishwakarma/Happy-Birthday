@@ -2,11 +2,15 @@
 <html lang="en">
 
 <head>
-  <meta charset="UTF-8">
+  <meta charset="UTF-8" />
   <title>3D Responsive Gallery</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="Css/photo-album.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="author" content="Nirmal Vishwakarma" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="Css/photo-album.css" />
+  <style>
+    
+  </style>
 </head>
 
 <body>
@@ -15,24 +19,24 @@
 
   <div class="carousel">
     <div class="carousel-inner">
-      <img src="https://picsum.photos/id/1015/600/400" alt="1" style="--i:0">
-      <img src="https://picsum.photos/id/1016/600/400" alt="2" style="--i:1">
-      <img src="https://picsum.photos/id/1018/600/400" alt="3" style="--i:2">
-      <img src="https://picsum.photos/id/1021/600/400" alt="4" style="--i:3">
-      <img src="https://picsum.photos/id/1025/600/400" alt="5" style="--i:4">
-      <img src="https://picsum.photos/id/1035/600/400" alt="6" style="--i:5">
+      <img src="asset/1.jpeg" alt="Photo 1" style="--i:0" />
+      <img src="asset/2.jpg" alt="Photo 2" style="--i:1" />
+      <img src="asset/3.jpg" alt="Photo 3" style="--i:2" />
+      <img src="asset/4.jpg" alt="Photo 4" style="--i:3" />
+      <img src="asset/5.jpg" alt="Photo 5" style="--i:4" />
     </div>
   </div>
 
-  <!-- Button that appears after 5 seconds -->
-  <button id="surpriseButton"><a href="letter.html">🎁 Tap To Open Letter</a></button>
+  <button id="surpriseButton">
+    <a href="letter.html">🎁 Tap To Open Letter</a>
+  </button>
 
   <script>
     // Show button after 5 seconds
     window.addEventListener("load", () => {
       setTimeout(() => {
         document.getElementById("surpriseButton").style.display = "inline-block";
-      }, 5000);
+      }, 7000);
     });
   </script>
 
