@@ -2,18 +2,19 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
+    <meta charset="UTF-8" />
     <title>Happy Birthday Songs</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="Css/song.css">    
-    <meta name="author" content="Nirmal Vishwakarma">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="author" content="Nirmal Vishwakarma" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="Css/song.css" />
 </head>
 
 <body>
     <span class="emoji">🥳🎊🎀🎁</span>
-    <h1> Happy Birthday ?! </h1>
-    <p>Pick Your Mann Pasand Song Jo, Maine Rakha Hai</p>
+    <h1>Happy Birthday Nilisha</h1>
+    <p>Pick your mann pasand gaana jo maine rakha hai 💖</p>
 
     <select id="song-selector">
         <option value="">Choose A Song</option>
@@ -24,20 +25,34 @@
         <option value="Songs/Tera Hone Laga Hoon.mp3">✨ Tera Hone Laga Hu</option>
         <option value="Songs/Shape Of You.mp3">🔥 Shape of You</option>
         <option value="Songs/See You Again.mp3">🎧 See You Again</option>
+        <option value="Songs/Preet Re.mp3">❤️‍🩹 Preet Re</option>
+        <option value="Songs/Bulleya Sultan.mp3">🕊️ Bulleya</option>
+        <option value="Songs/I Wanna Be Yoursi.mp3">🖤 I Wanna Be Yours</option>
+        <option value="Songs/Tu Hai Kahan.mp3">🌌 Tu Hai Kahan</option>
+        <option value="Songs/Surili Akhiyon Wale.mp3">🌹 Surili Akhiyon Wale</option>
+        <option value="Songs/Sahiba -Aditya Rikhari.mp3">🌫️ Sahiba -Aditya Rikhari</option>
+        <option value="Songs/Sahiba.mp3">🥀 Sahiba</option>
+        <option value="Songs/Iktara.mp3">💫 Iktara</option>
+        <option value="Songs/Line Without a Hook.mp3">🎣 Line Without a Hook</option>
+        <option value="Songs/Long Time No See.mp3">💌 Long Time No See</option>
+        <option value="Songs/Lutt Putt Gaya.mp3">💘 Lutt Putt Gaya</option>
     </select>
 
     <button id="play-btn">▶️ Play Song</button>
 
-    <div class="note">🎶 🎵 🎶</div>
-
     <audio id="birthday-audio" controls style="display: none;" preload="none"></audio>
 
-    <button type="button" class="btn-gallery" id="btn"><a href="photo-album.html">📸 View Photo Gallery</a></button>
+    <div class="note">🎶 Enjoy the vibes 🎶</div>
+
+    <button type="button" class="btn-gallery" id="btn" style="display: none;">
+        <a href="photo-album.html">📸 View Photo Gallery</a>
+    </button>
 
     <script>
         const audio = document.getElementById('birthday-audio');
         const selector = document.getElementById('song-selector');
         const playBtn = document.getElementById('play-btn');
+        const galleryBtn = document.getElementById('btn');
 
         playBtn.addEventListener('click', () => {
             const selectedSong = selector.value;
@@ -46,7 +61,7 @@
                 audio.style.display = 'block';
                 audio.play().catch(error => {
                     console.error("Playback error:", error);
-                    alert("Playback failed. Please interact with the page first or check the file path.");
+                    alert("Playback failed. Please interact with the page or check the file path.");
                 });
             } else {
                 alert("Please select a song first!");
@@ -58,11 +73,11 @@
             audio.currentTime = 0;
             audio.style.display = 'none';
         });
-        setTimeout(function () {
-            document.getElementById("btn").style.display = "inline-block";
-        }, 5000);
-    </script>
 
+        setTimeout(() => {
+            galleryBtn.style.display = "inline-block";
+        }, 1000);
+    </script>
 </body>
 
 </html>
